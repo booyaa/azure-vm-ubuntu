@@ -15,3 +15,11 @@ apply:
 check:
 	terraform validate
 	terraform fmt
+
+.PHONY: destroy
+destroy:
+	terraform destroy -var-file azure.tfvars
+
+PHONY: ssh
+ssh: 
+	ssh $(shell terraform output ssh_connect)
