@@ -9,3 +9,9 @@ plan:
 .PHONY: apply
 apply:
 	terraform apply "out.plan"
+
+
+.PHONY: check
+check:
+	terraform validate
+	terraform fmt
